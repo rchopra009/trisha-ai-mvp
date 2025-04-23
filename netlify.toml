@@ -1,8 +1,12 @@
 # example netlify.toml
 [build]
-  # Install deps, build & export static HTML
-  command = "cd mvp-app && npm install && npm run build && npx next export"
-  publish = "mvp-app/out"
+  # Build your Next app in mvp-app
+  command = "cd mvp-app && npm install && npm run build"
+  # Publish from Next’s output directory
+  publish = "mvp-app/.next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.
