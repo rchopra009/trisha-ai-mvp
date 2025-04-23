@@ -41,3 +41,5 @@ useEffect(() => {
     </p>
   )}
 </div>
++  )      // close the JSX return
++}       // close the Home function
