@@ -1,8 +1,8 @@
 # example netlify.toml
 [build]
-  command = "cd mvp-app && npm run build"
-  functions = "netlify/functions"
-  publish = "mvp‑app/out"
+  # Install deps and build inside mvp-app
+  command   = "cd mvp-app && npm install && npm run build"
+  publish   = "mvp-app/out"
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.
