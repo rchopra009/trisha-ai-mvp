@@ -34,12 +34,10 @@ useEffect(() => {
       >
         Send me a magic link
       </button>
-      {message && <p className="mt-4">{message}</p>}
-    </div>
-  )
-}
-{user && (
-  <p className="mt-4 text-sm text-gray-700">
-    ✅ Signed in as <strong>{user.email}</strong>
-  </p>
-)}
+        {message && <p className="mt-4">{message}</p>}
+  {user && (
+    <p className="mt-4 text-sm text-gray-700">
+      ✅ Signed in as <strong>{user.email}</strong>
+    </p>
+  )}
+</div>
