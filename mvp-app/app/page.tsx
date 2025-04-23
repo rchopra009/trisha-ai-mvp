@@ -1,10 +1,16 @@
 'use client'
 import { supabase } from '@/lib/supabaseClient'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
   const [email, setEmail] = useState('')
+  const [user, setUser] = useState<any>(null)
   const [message, setMessage] = useState('')
+useEffect(() => {
+  supabase.auth.getSession().then(({ data }) => {
+    setUser(data.session?.user ?? null)
+  })
+}, [])
 
   const handleLogin = async () => {
     const { error } = await supabase.auth.signInWithOtp({ email })
@@ -32,3 +38,8 @@ export default function Home() {
     </div>
   )
 }
+{user && (
+  <p className="mt-4 text-sm text-gray-700">
+    ✅ Signed in as <strong>{user.email}</strong>
+  </p>
+)}
