@@ -1,0 +1,23 @@
+{
+  "name": "trisha-ai-mvp",
+  "type": "node",
+  "rootDir": ".",
+  "build": {
+    "command": "npm install && npm run dev",
+    "dir": "mvp-app"
+  },
+  "settings": {
+    "terminal.integrated.cwd": "\${workspaceFolder}/mvp-app",
+    "files.autoSave": "afterDelay",
+    "files.exclude": {
+      "**/.git": true,
+      "**/node_modules": true,
+      "**/.env.local": true
+    }
+  },
+  "extensions": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "ms-vscode.vscode-typescript-tslint-plugin"
+  ]
+}
